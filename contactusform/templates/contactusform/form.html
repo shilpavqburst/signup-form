@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_messages %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <title>Contact Us</title>
+    </head>
+    <body style="background-color: #ffffff">
+
+      <div class="container contact-form">
+              <div class="contact-image">
+                 
+              </div>
+              <form method="POST" class="form-horizontal" id="post-form">
+                  <h3>REGISTER</h3>
+                    <div class="row">
+                      <div class="form-group">
+
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <div style="text-align: center;" class="form-group">
+                             <input type="submit" name="btnSubmit" class="btnContact" value="Sign Up" />
+                        </div>
+                        <div style="text-align: center;">
+                          <button class="btnContact" onclick="window.location.href='{% url 'database' %}';">
+                            Registered List
+                          </button>
+                        </div>
+                      </div>
+                  </div>
+              </form>
+            </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <script src="{%static 'scripts.js'%}"></script>
+  </body>
+</html>
