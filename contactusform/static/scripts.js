@@ -8,11 +8,15 @@ $(document).ready( function(){
       var flag = true;
 
       var vname = $("#id_name").val();
+      vname = vname.trim();
       console.log(typeof(vname));
       var vemail = $("#id_email").val();
       var vphoneno = $("#id_phone_no").val();
       console.log(typeof(vphoneno));
       var vdescription = $("#id_description").val();
+      vdescription = vdescription.trim();
+
+
 
       $(".error").remove();
 
