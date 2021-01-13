@@ -10,7 +10,7 @@ from . import forms
 
 def contactusform_view(request):
 
-    if request.method=="POST":
+    # if request.method=="POST":
         # contactusform=Contactusform()
         # name = request.POST.get('name')
         # email = request.POST.get('email')
