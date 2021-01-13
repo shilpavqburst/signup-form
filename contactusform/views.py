@@ -34,3 +34,20 @@ def database_view(request):
 def redirect_view(request):
     response = redirect('/register')
     return response
+    
+def saveuser_view(request):
+
+    if request.method=="POST":
+        contactusform=Contactusform()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_no = request.POST.get('phone_no')
+        description=request.POST.get('description')
+
+        contactusform.name =  name
+        contactusform.email = email
+        contactusform.phone_no = phone_no
+        contactusform.description = description
+        contactusform.save()
+
+    return JsonResponse({"response":"success"})
