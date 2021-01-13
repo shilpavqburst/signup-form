@@ -7,5 +7,6 @@ urlpatterns = [
     path('register',views.contactusform_view,name="form"),
     path('',views.redirect_view),
     path('database',views.database_view,name="database"),
+    path('saveuser',views.contactusform_view,name="saveuser"),
    
 ]

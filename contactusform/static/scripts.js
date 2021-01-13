@@ -70,7 +70,7 @@ $(document).ready( function(){
           // ajax call
           $.ajax({
               type: "POST",
-              url: "",
+              url: "https://signupf.herokuapp.com/saveuser",
               data: {
                   name: $("#id_name").val(),
                   email: $("#id_email").val(),
