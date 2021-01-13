@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect,render
 from .models import Contactusform
 from django.views.generic import View
 from django.http import HttpResponse
@@ -30,3 +30,7 @@ def contactusform_view(request):
 def database_view(request):
     form = Contactusform.objects.all()
     return render(request,'contactusform/database.html', {'form': form})
+
+def redirect_view(request):
+    response = redirect('/register')
+    return response
