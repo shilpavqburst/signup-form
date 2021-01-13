@@ -1,5 +1,5 @@
 from django.shortcuts import redirect,render
-from .models import Contactusform,User
+from .models import Contactusform
 from django.views.generic import View
 from django.http import HttpResponse
 from .forms import Contactform
@@ -28,7 +28,7 @@ def contactusform_view(request):
 
 
 def database_view(request):
-    form = User.objects.all()
+    form = Contactusform.objects.all()
     return render(request,'contactusform/database.html', {'form': form})
 
 def redirect_view(request):
@@ -39,7 +39,7 @@ def saveuser_view(request):
     if request.method!="POST":
         return HttpResponseServerError()
     if request.method=="POST":
-        contactusform=User()
+        contactusform=Contactusform()
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone_no = request.POST.get('phone_no')
