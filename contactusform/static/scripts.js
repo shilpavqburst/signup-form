@@ -66,11 +66,11 @@ $(document).ready( function(){
 
 
       if(flag){
-
+          var baseUrl=window.location.pathname.replace("register","saveuser");
           // ajax call
           $.ajax({
               type: "POST",
-              url: "https://signupf.herokuapp.com/saveuser",
+              url: baseUrl,
               data: {
                   name: $("#id_name").val(),
                   email: $("#id_email").val(),
