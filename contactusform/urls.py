@@ -1,11 +1,11 @@
 from django.urls import path
 from django.views.generic.base import RedirectView
-from .import views, redirect_view
+from .import views
 
 urlpatterns = [
 
     path('register',views.contactusform_view,name="form"),
-    path('', redirect_view),
+    path('',views.redirect_view),
     path('database',views.database_view,name="database"),
    
 ]
